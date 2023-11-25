@@ -30,9 +30,9 @@ get("/random/new") do
 end
 
 get("/random/results") do
-  @number1=params.fetch("number1").to_i
-  @number2=params.fetch("number2").to_i
-  @chosen_number=rand(@number1..@number2)
+  @minimum=params.fetch("Minimum").to_f
+  @maximum=params.fetch("Maximum").to_f
+  @chosen_number=rand(@minimum..@maximum)
   erb(:random_results)
 end
 
